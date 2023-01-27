@@ -54,8 +54,9 @@ productItem.forEach(item => {
   item.addEventListener("click", itemInit);
 });
 function itemInit() {
-  lockSideAdd();
+  document.documentElement.classList.add("lock");
   document.documentElement.classList.add("item-show");
+  document.documentElement.classList.remove("side-open");
   document.documentElement.classList.remove("menu-open");
   document.documentElement.classList.remove("contacts-open");
   document.documentElement.classList.remove("filters-all");
@@ -104,6 +105,23 @@ function sideClose() {
 				prevEl: '.product-item__slider .swiper-button-prev',
 				nextEl: '.product-item__slider .swiper-button-next',
 			},
+      	// Миниатюры (превью)
+	    thumbs: {
+	    	swiper: {
+	    		el: '.product-item__slider-mini ',
+	    		slidesPerView: 4,
+	    	}
+	    },
+		});
+	}
+
+  // == FILTERS__SLIDER SLIDER ==================================================
+  if (document.querySelector('.filters__slider')) { 
+		new Swiper('.filters__slider', {
+      slidesPerView: "auto",
+      spaceBetween: 24,
+      centeredSlides: false,
+      loop: true,
 		});
 	}
 
