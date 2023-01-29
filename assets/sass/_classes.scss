@@ -1,43 +1,51 @@
 .main-wrapper {
-  display: flex;
-  min-height: 100%;
+	display: flex;
+	min-height: 100%;
 	overflow: hidden;
 	position: relative;
+
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
 }
+
 .left-wrapper {
-  flex: 1 1 auto;
-	
+	flex: 1 1 auto;
+
 }
+
 .wrapper {
 	min-height: 100%;
 	display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  overflow: hidden;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	overflow: hidden;
+
 	@include tablet {
 		flex-direction: column-reverse;
+
 		&.not-found-page__second {
 			flex-direction: column;
 		}
 	}
+
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
+
 	// Прижать footer
-	> main {
+	>main {
 		-webkit-box-flex: 1;
 		-ms-flex: 1 1 auto;
 		flex: 1 1 auto;
 	}
+
 	// фикс для слайдеров
-	> * {
+	>* {
 		min-width: 0;
 	}
 }
@@ -54,50 +62,58 @@ textarea {
 }
 
 .title-mob {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: calc(24/16);
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: calc(24/16);
 }
+
 .subtitle-mob {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: calc(20/16);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: calc(20/16);
 }
 
 // CHECKBOXES
 .checkbox {
 	position: relative;
+
 	&:not(:last-child) {
-    margin-bottom: 24px;
-  }  
+		margin-bottom: 24px;
+	}
+
 	// .checkbox__input
 	&__input {
 		position: absolute;
 		width: 0;
 		height: 0;
 		opacity: 0;
-		&:checked + .checkbox__label {
+
+		&:checked+.checkbox__label {
 			&::before {
 				background-color: $purple;
 				z-index: 2;
 			}
+
 			span {
+
 				&::before,
 				&::after {
 					opacity: 1;
 				}
 			}
 		}
-		
+
 	}
+
 	// .checkbox__label
 	&__label {
 		cursor: pointer;
 		display: inline-flex;
-  	display: -ms-inline-flexbox;
+		display: -ms-inline-flexbox;
 		position: relative;
 		gap: 10px;
+
 		&:before {
 			content: "";
 			align-self: flex-start;
@@ -108,10 +124,12 @@ textarea {
 			border-radius: 8px;
 			background-color: $gray;
 		}
+
 		span {
 			position: absolute;
-    	left: 4px;
-    	top: 10px;
+			left: 4px;
+			top: 10px;
+
 			&::before {
 				content: '';
 				position: absolute;
@@ -124,6 +142,7 @@ textarea {
 				opacity: 0;
 				z-index: 3;
 			}
+
 			&::after {
 				content: '';
 				position: absolute;
@@ -138,13 +157,12 @@ textarea {
 			}
 		}
 	}
+
 	// .checkbox__text
 	&__text {
 		align-self: center;
 	}
 }
-
-
 
 .btn {
 	border-radius: 16px;
@@ -190,28 +208,32 @@ textarea {
 		justify-content: center;
 		text-transform: uppercase;
 		color: $purple;
-	} 
+	}
 }
 
 .side-common {
 	background-color: $grayLight;
-  border-left: 1px solid $grayDark;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 407px;
-  height: 100%;
-  transform: translateX(100%);
-  visibility: hidden;
+	border-left: 1px solid $grayDark;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 407px;
+	height: 100%;
+	transform: translateX(100%);
+	visibility: hidden;
 	overflow: hidden;
-  transition: all .4s ease;
-  display: flex;
-  flex-direction: column;
+	transition: all .4s ease;
+	display: flex;
+	flex-direction: column;
 	z-index: 5;
+
 	@include tablet {
 		width: 100%;
 		z-index: 6;
-		border-left:unset;
+		border-left: unset;
+
+		right: inherit;
+		transform: translateY(100%);
 	}
 }
 
@@ -221,9 +243,10 @@ textarea {
 		touch-action: none;
 		overscroll-behavior: none;
 	}
+
 	&.item-show {
-			overflow: hidden;
-			touch-action: none;
-			overscroll-behavior: none;
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
 	}
 }
