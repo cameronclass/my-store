@@ -1128,7 +1128,7 @@
   &__blocks {
     display: grid;
     grid-template-columns: 50% 50%;
-    max-width: 1512px;
+    max-width: 1530px;
     margin: 0 auto;
     @include adaptiveValue("padding-left", 83, 32);
     @include adaptiveValue("padding-right", 83, 32);
