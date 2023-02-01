@@ -1181,7 +1181,15 @@
   &__slider {
     position: relative;
     .product-item__image {
-      padding-bottom: 87%;
+      padding-bottom: 100%;
+      @media (min-width: 1000px) {
+        @media (max-height: 850px) {
+          padding-bottom: 80%;
+        }
+        @media (max-height: 730px) {
+          padding-bottom: 60%;
+        }
+      }
     }
     .product-item__img {
     }
